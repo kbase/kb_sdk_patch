@@ -30,5 +30,6 @@ RUN apt remove -y usrmerge
 RUN for pkg in docker.io docker-doc docker-compose docker-compose-v2 \
     podman-docker containerd runc; do sudo apt-get remove $pkg; done
 RUN apt install -y curl
+RUN apt autoremove -y
 RUN curl -fsSL https://get.docker.com | sh
 RUN mkdir /.docker && chmod 777 /.docker
